@@ -1,3 +1,5 @@
+package Assignment1;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -44,9 +46,9 @@ public class Application {
                 item.start();
             });
 
-            // Waiting for the n-2 Task to complete and then start final task
+            // Waiting for the n-2 Assignment1.Task to complete and then start final task
             countDownLatch.await();
-            logger.info("Starting Final Task : " + lastTask.getTaskName() + " with Duration : " + lastTask.getDuration());
+            logger.info("Starting Final Assignment1.Task : " + lastTask.getTaskName() + " with Duration : " + lastTask.getDuration());
             lastTask.start();
         } catch (InterruptedException ie) {
             logger.info(ie.getMessage());
