@@ -29,14 +29,17 @@ public class FileIOEngine {
         OutputStream outputStream = new BufferedOutputStream(new FileOutputStream(destinationFile));
 
         long inputFileSize = sourceFile.length();
+        int numberOfChunks = (int) inputFileSize/CHUNK_SIZE;
+        logger.info("No. Of Chunks : " + numberOfChunks);
 
         byte[] chunk = new byte[CHUNK_SIZE];
+
         long readerExitCode = 1;
         int counter = 0;
         while (readerExitCode >= 0) {
+            counter++;
             readerExitCode = inputStream.read(chunk);
             outputStream.write(chunk);
-            counter++;
         }
 
         long outputFileSize = destinationFile.length();
