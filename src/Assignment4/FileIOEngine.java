@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 
 public class FileIOEngine {
     private static Logger logger = Logger.getLogger(FileIOEngine.class.getName());
+    private static final int CHUNK_SIZE = 10240;
 
     public static void main(String[] args) throws IOException {
         logger.info("free memory : " + Runtime.getRuntime().freeMemory());
@@ -27,21 +28,28 @@ public class FileIOEngine {
         InputStream inputStream = new BufferedInputStream(new FileInputStream(sourceFile));
         OutputStream outputStream = new BufferedOutputStream(new FileOutputStream(destinationFile));
 
-        byte[] chunk = new byte[10000];
+        long inputFileSize = sourceFile.length();
+
+        byte[] chunk = new byte[CHUNK_SIZE];
         long readerExitCode = 1;
         int counter = 0;
         while (readerExitCode >= 0) {
             readerExitCode = inputStream.read(chunk);
             outputStream.write(chunk);
-            counter ++;
+            counter++;
         }
-        logger.info("Copied File : " + destinationFile.getName());
-        logger.info("File Size : " + destinationFile.length());
-        logger.info("Number Of Chunks : " + counter);
+
+        long outputFileSize = destinationFile.length();
+        if (outputFileSize != inputFileSize) {
+            logger.info("Failed to copy file completely");
+            destinationFile.delete();
+        }
+
+        logger.info("Copied File : " + destinationFile.getName() + " File Size : " + outputFileSize + " Number Of "
+            + "Chunks : " + counter);
 
         outputStream.flush();
         outputStream.close();
         inputStream.close();
-
     }
 }
