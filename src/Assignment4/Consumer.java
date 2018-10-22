@@ -17,6 +17,7 @@ public class Consumer extends Thread {
 
     @Override public void run() {
         try {
+            sleep(3000);
             while (!sharedQueue.isEmpty()) {
                 ChunkWriteThread chunkWriteThread = new ChunkWriteThread(sharedQueue.take());
                 chunkWriteThread.start();

@@ -33,7 +33,7 @@ public class ChunkReadThread extends Thread {
     public void run() {
         try {
             queue.put(getChunk());
-            logger.info("Wrote Chunk No : " + chunk.getChunkSequenceNo() + "to sharedQueue");
+            //logger.info("Read Chunk No " + chunk.getChunkSequenceNo() + " to sharedQueue");
         } catch (Exception e) {
             e.printStackTrace();
         }

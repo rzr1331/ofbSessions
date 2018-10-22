@@ -23,16 +23,17 @@ public class Producer extends Thread{
             InputStream inputStream = new BufferedInputStream(new FileInputStream(sourceFile));
 
             byte[] buffer = new byte[chunkSize];
+            long counter = 0;
             long readerExitCode = 1;
             while (readerExitCode != -1) {
-                long counter = 0;
                 readerExitCode = inputStream.read(buffer);
                 Chunk chunk = Chunk.Builder.chunk()
                     .withChunkSequenceNo(counter)
                     .withChunkBuffer(buffer)
                     .build();
                 ChunkReadThread chunkThread = new ChunkReadThread(sharedQueue, chunk);
-                currentThread().start();
+                chunkThread.start();
+                counter++;
             }
             inputStream.close();
         }catch (Exception e) {

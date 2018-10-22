@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aabaf724-a150-4f96-beff-60152c810461" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Assignment4/Chunk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignment4/ChunkReadThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignment4/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignment4/FileTransfer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignment4/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment 1 Countdwon Latch/Assignment4/FileIOEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 1 Countdwon Latch/Assignment4/FileIOEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment 1 Countdwon Latch/Assignment4/Transfer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 1 Countdwon Latch/Assignment4/ChunkThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assignment4/ChunkReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignment4/ChunkReadThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assignment4/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignment4/Consumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assignment4/FileIOEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignment4/FileIOEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignment4/Transfer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assignment4/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignment4/Producer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,23 +30,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="43" />
+          <entry key="java" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="43" />
+          <entry key="JAVA" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="6994" />
+          <entry key="java" value="7150" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6994" />
+          <entry key="JAVA" value="7150" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -63,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment4/FileIOEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="326">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,34 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment4/Consumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Assignment4/Producer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+            <state relative-caret-position="264">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,18 +82,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assignment4/ChunkReadThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="41" lean-forward="true" selection-start-line="5" selection-end-line="41" />
+            <state relative-caret-position="309">
+              <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#605#606#0" expanded="true" />
-                <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#674#675#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,6 +141,7 @@
         <option value="$PROJECT_DIR$/src/Assignment4/FileIOEngine.java" />
         <option value="$PROJECT_DIR$/src/Assignment4/Producer.java" />
         <option value="$PROJECT_DIR$/src/Assignment4/Consumer.java" />
+        <option value="$PROJECT_DIR$/src/Assignment4/ChunkReadThread.java" />
         <option value="$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java" />
       </list>
     </option>
@@ -208,7 +184,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540211327660" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540213814384" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -330,8 +306,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20193861" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20193861" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -341,12 +318,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.360274" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.30958903" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.30821916" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Tail" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32876712" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32876712" />
@@ -389,6 +366,30 @@
           <line>39</line>
           <properties />
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Assignment4/Consumer.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Assignment4/FileIOEngine.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -526,10 +527,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment4/FileIOEngine.java">
+    <entry file="file://$PROJECT_DIR$/src/Assignment4/Producer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="207">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -538,18 +539,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment4/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+        <state relative-caret-position="264">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assignment4/Producer.java">
+    <entry file="file://$PROJECT_DIR$/src/Assignment4/FileIOEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        <state relative-caret-position="326">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -558,26 +559,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment4/ChunkReadThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="41" lean-forward="true" selection-start-line="5" selection-end-line="41" />
+        <state relative-caret-position="309">
+          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assignment4/ChunkWriteThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        <state relative-caret-position="176">
+          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#410#411#0" expanded="true" />

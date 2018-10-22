@@ -1,6 +1,7 @@
 package Assignment4;
 
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.concurrent.BlockingQueue;
@@ -18,11 +19,13 @@ public class ChunkWriteThread extends Thread {
     @Override
     public void run() {
         try {
-            String destinationDirectory = "/Users/avichalsahai/chunkDirectory";
+            String destinationDirectory = "/Users/avichalsahai/chunkDirectory/";
             String chunkFileName = destinationDirectory + "Chunk-" + chunk.getChunkSequenceNo();
+            //File chunkFile = new File(chunkFileName);
+            FileOutputStream chunkFileOS = new FileOutputStream(chunkFileName);
 
             OutputStream outputStream =
-                new BufferedOutputStream(new FileOutputStream(destinationDirectory + chunkFileName));
+                new BufferedOutputStream(chunkFileOS);
             outputStream.write(chunk.getChunkBuffer());
             outputStream.flush();
             outputStream.close();

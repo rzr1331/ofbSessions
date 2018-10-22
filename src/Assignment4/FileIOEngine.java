@@ -15,15 +15,16 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.logging.Logger;
 
 public class FileIOEngine {
     private static Logger logger = Logger.getLogger(FileIOEngine.class.getName());
     private static long sourceFileSize = 0;
     private static final int CHUNK_SIZE = 1024 * 1000;
-    private static BlockingQueue<Chunk> sharedQueue;
 
     public static void main(String[] args) throws IOException {
+        BlockingQueue<Chunk> sharedQueue = new LinkedBlockingDeque<>();
         //logger.info("free memory : " + Runtime.getRuntime().freeMemory());
         File sourceFile = new File("/Users/avichalsahai/temp_1GB_file");
 
