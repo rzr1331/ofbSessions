@@ -1,42 +1,44 @@
 package Assignment4;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.RandomAccessFile;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.logging.Logger;
 
-public class Producer extends Thread{
+public class Producer extends Thread {
+    private static Logger logger = Logger.getLogger(Producer.class.getName());
+    private static ExecutorService producerExecutorService = Executors.newFixedThreadPool(1);
+
     private File sourceFile;
     private int chunkSize;
     private BlockingQueue<Chunk> sharedQueue;
+    private MetaData metaData;
 
-    public Producer(File sourceFile, int chunkSize, BlockingQueue<Chunk> sharedQueue) {
+    public Producer(File sourceFile, int chunkSize, BlockingQueue<Chunk> sharedQueue, MetaData metaData) {
         this.sourceFile = sourceFile;
         this.chunkSize = chunkSize;
         this.sharedQueue = sharedQueue;
+        this.metaData = metaData;
     }
 
     @Override public void run() {
         try {
-            System.out.println("file length : " + sourceFile.length());
-            InputStream inputStream = new BufferedInputStream(new FileInputStream(sourceFile));
+            RandomAccessFile randomAccessFile = new RandomAccessFile(sourceFile.getAbsolutePath(), "r");
 
-            byte[] buffer = new byte[chunkSize];
-            long counter = 0;
-            long readerExitCode = 1;
-            while (readerExitCode != -1) {
-                readerExitCode = inputStream.read(buffer);
-                Chunk chunk = Chunk.Builder.chunk()
-                    .withChunkSequenceNo(counter)
-                    .withChunkBuffer(buffer)
-                    .build();
-                ChunkReadThread chunkThread = new ChunkReadThread(sharedQueue, chunk);
-                chunkThread.start();
-                counter++;
+            long sequence = 0;
+            long offset = 0;
+            for (int i = 0; i < metaData.getNoOfChunks(); i++) {
+                producerExecutorService.submit(
+                    new ChunkReadThread(sharedQueue, randomAccessFile, offset, sequence, metaData));
+                System.out.println("Submitting Read Thread : " + sequence);
+                sequence++;
+                offset += chunkSize;
             }
-            inputStream.close();
-        }catch (Exception e) {
+            System.out.println("Sequence :" +sequence);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

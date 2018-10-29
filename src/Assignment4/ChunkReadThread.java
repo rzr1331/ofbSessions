@@ -1,39 +1,35 @@
 package Assignment4;
 
+import java.io.RandomAccessFile;
 import java.util.concurrent.BlockingQueue;
 import java.util.logging.Logger;
 
-public class ChunkReadThread extends Thread {
+public class ChunkReadThread implements Runnable {
     private static Logger logger = Logger.getLogger(ChunkReadThread.class.getName());
     private BlockingQueue queue;
-    private Chunk chunk;
+    private RandomAccessFile randomAccessFile;
+    private long offset;
+    private long sequenceNo;
+    private MetaData metaData;
 
-    public ChunkReadThread(BlockingQueue queue, Chunk chunk) {
+    public ChunkReadThread(BlockingQueue queue, RandomAccessFile randomAccessFile, long offset, long sequenceNo,
+        MetaData metaData) {
         this.queue = queue;
-        this.chunk = chunk;
-    }
-
-    public BlockingQueue getQueue() {
-        return queue;
-    }
-
-    public void setQueue(BlockingQueue queue) {
-        this.queue = queue;
-    }
-
-    public Chunk getChunk() {
-        return chunk;
-    }
-
-    public void setChunk(Chunk chunk) {
-        this.chunk = chunk;
+        this.randomAccessFile = randomAccessFile;
+        this.offset = offset;
+        this.sequenceNo = sequenceNo;
+        this.metaData = metaData;
     }
 
     @Override
     public void run() {
         try {
-            queue.put(getChunk());
-            //logger.info("Read Chunk No " + chunk.getChunkSequenceNo() + " to sharedQueue");
+            byte[] buffer = new byte[metaData.getChunkSize()];
+            randomAccessFile.seek(offset);
+            randomAccessFile.read(buffer);
+            Chunk chunk = new Chunk(sequenceNo,buffer);
+            boolean added = queue.add(chunk);
+            logger.info("Read Chunk No " + chunk.getChunkSequenceNo() + " to sharedQueue "+added);
         } catch (Exception e) {
             e.printStackTrace();
         }
